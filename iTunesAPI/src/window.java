@@ -1,3 +1,9 @@
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -85,7 +91,13 @@ public class window extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.print("test");
+        try {
+            iTunesSearch querry = new iTunesSearch("kim larsen");
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(window.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(window.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
