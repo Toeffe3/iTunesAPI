@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -6,8 +7,6 @@ import java.util.logging.*;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -150,19 +149,6 @@ public class window extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(window.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        Thread plr = new Thread() {
-            public void run() {
-                    new JFXPanel(); 
-                    Media hit = new Media(new File(outputPath).toURI().toString());
-                    MediaPlayer mediaPlayer = new MediaPlayer(hit);
-                    mediaPlayer.play();
-                    System.out.println("spiller");
-                
-            }
-        };
-        
-        plr.start();
         
         
 
