@@ -6,8 +6,6 @@ import java.util.logging.*;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
