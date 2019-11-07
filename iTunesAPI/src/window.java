@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -148,19 +149,6 @@ public class window extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(window.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        Thread plr = new Thread() {
-            public void run() {
-                    new JFXPanel(); 
-                    Media hit = new Media(new File(outputPath).toURI().toString());
-                    MediaPlayer mediaPlayer = new MediaPlayer(hit);
-                    mediaPlayer.play();
-                    System.out.println("spiller");
-                
-            }
-        };
-        
-        plr.start();
         
         
 
