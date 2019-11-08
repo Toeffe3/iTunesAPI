@@ -25,6 +25,7 @@ public class window extends javax.swing.JFrame {
      */
     public window() {
         initComponents();
+
     }
 
     /**
@@ -67,7 +68,7 @@ public class window extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, javax.swing.JEditorPane.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
@@ -113,16 +114,16 @@ public class window extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        
-        iTunesSearch querry = new iTunesSearch(searchField.getText());
-        
+
+        iTunesSearch querry = new iTunesSearch(searchField.getText(), 2);
+
         try {
             iTunesCards.insertIntoTable(resultsTable, querry.getArray());
         } catch (Exception ex) {
             Logger.getLogger(window.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        URL url = null;
+
+        /*URL url = null;
         try {
             url = new URL("https://audio-ssl.itunes.apple.com/itunes-assets/Music/4b/c2/14/mzm.acnqialh.aac.p.m4a");
         } catch (MalformedURLException ex) {
@@ -131,26 +132,26 @@ public class window extends javax.swing.JFrame {
 
         String tempDir = System.getProperty("java.io.tmpdir");
         String outputPath = tempDir + "/" + "preview.mp3";
-        
+
         try {
             URLConnection urlConn = url.openConnection();
-            InputStream is = urlConn.getInputStream();               
+            InputStream is = urlConn.getInputStream();
             FileOutputStream fos = new FileOutputStream(outputPath);
             byte[] buffer = new byte[4096];
             int length;
             while ((length = is.read(buffer)) > 0) {
                 fos.write(buffer, 0, length);
             }
-            
+
             is.close();
             fos.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(window.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(window.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+        }*/
+
+
 
     }//GEN-LAST:event_searchButtonActionPerformed
 
@@ -189,7 +190,7 @@ public class window extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new window().setVisible(true);
-                
+
             }
         });
     }
